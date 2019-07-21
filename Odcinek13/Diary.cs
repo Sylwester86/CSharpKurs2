@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 
-namespace StudentDiary1
+namespace Odcinek13
 {
     class Diary
     {
@@ -13,18 +13,21 @@ namespace StudentDiary1
         }
         
         //Stan (zmienne - pola)
-        List<float> ratings;
+        private List<float> ratings;
 
 
 
         //Zachowania
         public void AddRating(float rating)
         {
-            ratings.Add(rating);
+            if (rating >=0 && rating <= 10) 
+            {
+                ratings.Add(rating);
+            }
         }
 
 
-        internal DiaryStatistics ComputeStatistics()
+        public DiaryStatistics ComputeStatistics()
         {
             DiaryStatistics stats = new DiaryStatistics();
 
